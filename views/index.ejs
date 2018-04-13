@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Smart Home: garden and shower</title>
     <!--    favicon-->
@@ -27,45 +29,69 @@
 
 <body>
     <% if (!user) { %>
-        <h1 class=l ogin_msg>Welcome! Please <a href="/login">log in</a>.</h1>
+        <h1 class=l ogin_msg>Welcome! Please
+            <a href="/login">log in</a>.</h1>
         <% } else { %>
             <section class="hero-area-fix">
                 <h1 align="center" style="padding-top: 60px">Utilities</h1>
                 <div class="hero-area" id="water">
                     <div class="container">
-                        <div class="floatright">
-                            <form action="/openValve" method="POST">
-                                <button type="submit">Press to Turn valve onOff</button>
-                            </form>
-                            <div style="padding-top:40px">
-
-                                <form action="/update_data" method="POST">
-                                    <button type="submit">Update All reading</button>
-                                </form>
-                            </div>
-                        </div>
                         <div class="row">
                             <div class="hero-text">
-                                <div>
+                                <div class="newline">
                                     <h2>Light Intensity</h2>
-                                    <p>The Light Intensity is :
+                                    <p>
                                         <%= resources.pi.sensors.light.value%>
                                     </p>
                                 </div>
-                                <div style="padding-top:80px">
+                                <div class="newline">
                                     <h2>Temperature</h2>
-                                    <p>The current Temperature is :
+                                    <p>
                                         <%= resources.pi.sensors.temperature.value %>
                                     </p>
                                 </div>
-                                <div style="padding-top:80px">
+                                <div class="newline">
                                     <h2>Humidity</h2>
-                                    <p>The humidity is :
+                                    <p>
                                         <%= resources.pi.sensors.humidity.value%>
                                     </p>
                                     <p> the valve status is :
                                         <%= resources.pi.actuators.valve.status%>
                                     </p>
+                                </div>
+                            </div>
+                            <p>
+                                <b>Timer is set to:
+                                    <%= resources.pi.timer.hour %>:
+                                        <%= resources.pi.timer.minute %>
+                                </b>
+                            </p>
+                            <div class="floatright">
+                                <form method="post" action="/setTime">
+                                    <b>Set Days:</b>
+                                    <br>
+                                    <input type="checkbox" name="Monday" value=1>Monday
+                                    <input type="checkbox" name="Tuesday" value=2>Tuesday
+                                    <input type="checkbox" name="Wednesday" value=3>Wednesday
+                                    <input type="checkbox" name="Thursday" value=4>Thursday
+                                    <input type="checkbox" name="Friday" value=5>Friday
+                                    <input type="checkbox" name="Saturday" value=6>Saturday
+                                    <input type="checkbox" name="Sunday" value=0>Sunday
+                                    <br>
+                                    <b>Set time:</b>
+                                    <br>&nbsp;&nbsp;&nbsp;Hour:
+                                    <input type="text" name="hour"> <br>Minute:
+                                    <input type="text" name="minute">
+                                    <input type="submit" value="Submit">
+                                </form>
+                                <form class="button" action="/openValve" method="POST">
+                                    <button type="submit">Press to Turn valve onOff</button>
+                                </form>
+                                <div class="button">
+
+                                    <form action="/update_data" method="POST">
+                                        <button type="submit">Update All reading</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -88,27 +114,27 @@
                 </div>
             </footer>
             <% } %>
-            <!--End Footer area-->
-            <script src="js/jquery-2.2.4.min.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-            <script src="js/nav.js"></script>
-            <!--waypoint js-->
-            <script src="vendores/waypoint/waypoints.min.js"></script>
-            <!--counter js-->
-            <script src="vendores/couterup/jquery.counterup.min.js"></script>
-            <script src="vendores/typedjs/typed.min.js"></script>
-            <script src="vendores/ripples/jquery.ripples-min.js"></script>
-            <script type="text/javascript" src="js/scrollIt.min.js"></script>
-            <script type="text/javascript" src="js/wow.js"></script>
-            <script src="js/custom.js"></script>
-            <script>
-                $(function () {
-                    $.scrollIt();
-                });
-            </script>
-            <script>
-                new WOW().init();
-            </script>
+                <!--End Footer area-->
+                <script src="js/jquery-2.2.4.min.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+                <script src="js/nav.js"></script>
+                <!--waypoint js-->
+                <script src="vendores/waypoint/waypoints.min.js"></script>
+                <!--counter js-->
+                <script src="vendores/couterup/jquery.counterup.min.js"></script>
+                <script src="vendores/typedjs/typed.min.js"></script>
+                <script src="vendores/ripples/jquery.ripples-min.js"></script>
+                <script type="text/javascript" src="js/scrollIt.min.js"></script>
+                <script type="text/javascript" src="js/wow.js"></script>
+                <script src="js/custom.js"></script>
+                <script>
+                    $(function () {
+                        $.scrollIt();
+                    });
+                </script>
+                <script>
+                    new WOW().init();
+                </script>
 </body>
 
 </html>

@@ -190,14 +190,20 @@ body {
     position: absolute;
     top: 25%;
     transform: translateY(-50%);
-    left: 30%;
+    left: 15%;
     transform: translateX(-50%);
     z-index: 9999;
 }
 
+.button{
+    padding-top:40px;
+    margin-left: 30%;
+}
 .floatright{
     float: right;
-    padding-top:30%; 
+    padding-top:15%; 
+    border-left-style: solid;
+    padding-left: 20px;
 }
 .hero-text h1 {
     text-align: center;
@@ -492,10 +498,33 @@ box-shadow: 0px 0px 57px -11px rgba(0,0,0,0.3);
     margin-top: 75px;
 }
 
+.newline{
+    padding-top:80px;
+}
 @media only screen and (max-width: 860px) {
     .view-demo {
         margin-right: 0px;
         margin-bottom: 20px;
+    }
+    .floatright {float: none;
+        padding-top:0; 
+        border-left-style: none;
+        padding-left: 0px;
+    }    
+    .hero-text{
+        position: relative;
+        transform: none;
+    }
+    .button{
+        padding: 0;
+        margin: 0;
+    }
+    .newline{
+        padding: 0;
+        border:solid;
+        border-color: green;
+        border-left: none;
+        border-right: none;
     }
 }
 
@@ -506,11 +535,51 @@ box-shadow: 0px 0px 57px -11px rgba(0,0,0,0.3);
     .saas-landing .col-xs-12 {
         margin-bottom: 40px;
     }
+    .floatright {float: none;
+        padding-top:0; 
+        border-left-style: none;
+        padding-left: 0px;
+    }    
+    .hero-text{
+        position: relative;
+        transform: none;
+    }
+    .button{
+        padding: 0;
+        margin: 0;
+    }
+    .newline{
+        padding: 0;
+        border:solid;
+        border-color: green;
+        border-left: none;
+        border-right: none;
+    } 
 }
 
 @media (max-width:991px){
     .col-sm-6{
         margin-bottom: 40px;
+    }
+    .floatright {float: none;
+        padding-top:0; 
+        border-left-style: none;
+        padding-left: 0px;
+    }    
+    .hero-text{
+        position: relative;
+        transform: none;
+    }
+    .button{
+        padding: 0;
+        margin: 0;
+    }
+    .newline{
+        padding: 0;
+        border:solid;
+        border-color: green;
+        border-left: none;
+        border-right: none;
     }
 }
 @media all and (min-width: 412px) and (max-width: 767px) {
@@ -519,6 +588,26 @@ box-shadow: 0px 0px 57px -11px rgba(0,0,0,0.3);
         left: 50%;
         transform: translateX(-50%);
         margin-bottom: 40px;
+    }
+    .floatright {float: none;
+        padding-top:0; 
+        border-left-style: none;
+        padding-left: 0px;
+    }    
+    .hero-text{
+        position: relative;
+        transform: none;
+    }
+    .button{
+        padding: 0;
+        margin: 0;
+    }
+    .newline{
+        padding: 0;
+        border:solid;
+        border-color: green;
+        border-left: none;
+        border-right: none;
     }
 /*
     .saas-landing .col-xs-12 {

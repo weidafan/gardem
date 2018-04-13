@@ -3,6 +3,19 @@
     "name": "Garden Pi",
     "description": "A simple WoT-connected Raspberry PI for the WoT book.",
     "port": 8484,
+    "timer": {
+      "weekofdays": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "hour": 0,
+      "minute": 0
+    },
     "sensors": {
       "temperature": {
         "name": "Temperature Sensor",
@@ -23,30 +36,24 @@
         "description": "An ambient light sensor.",
         "unit": "%",
         "value": 0,
-        "gpio": 0    
+        "gpio": 0
       },
       "soil": {
         "name": "soil humidity sensor",
         "description": "An soil sensor.",
         "unit": "%",
         "value": 0,
-        "gpio": 0   
-      },
-      "pir": {
-        "name": "Passive Infrared",
-        "description": "A passive infrared sensor. When 'true' someone is present.",
-        "value": true,
-        "gpio": 17
+        "gpio": 0
       }
     },
     "actuators": {
       "leds": {
-          "name": "LED 1",
-          "value": true,
-          "gpio": 27
+        "name": "LED 1",
+        "value": true,
+        "gpio": 0
       },
       "valve": {
-        "name":"solenoid water valve",
+        "name": "solenoid water valve",
         "status": false,
         "gpio": 27
       }
